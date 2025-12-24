@@ -1,0 +1,123 @@
+.portfolio-logo-slider-section {
+  background-color: #1a1a1a;
+  padding: 15px 0;
+  overflow: hidden;
+}
+
+.portfolio-logo-slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolio-logo-slider-track {
+  display: flex;
+  animation: portfolio-scroll 30s linear infinite;
+  width: fit-content;
+}
+
+.portfolio-logo-slide {
+  flex-shrink: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+}
+
+.portfolio-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-logo-slide:hover .portfolio-logo-wrapper {
+  opacity: 1;
+}
+
+.portfolio-logo-text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #ffffff;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Klarna specific styling */
+.portfolio-logo-slide:nth-child(2) .portfolio-logo-text,
+.portfolio-logo-slide:nth-child(10) .portfolio-logo-text {
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+/* Viaplay specific styling */
+.portfolio-logo-slide:nth-child(3) .portfolio-logo-text,
+.portfolio-logo-slide:nth-child(11) .portfolio-logo-text {
+  font-weight: 500;
+}
+
+/* Doktor24 specific styling */
+.portfolio-logo-slide:nth-child(4) .portfolio-logo-text,
+.portfolio-logo-slide:nth-child(12) .portfolio-logo-text {
+  font-family: monospace;
+  font-weight: 700;
+}
+
+/* Spotify specific styling */
+.portfolio-logo-slide:nth-child(5) .portfolio-logo-text,
+.portfolio-logo-slide:nth-child(13) .portfolio-logo-text {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Animation */
+@keyframes portfolio-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.portfolio-logo-slider-container:hover .portfolio-logo-slider-track {
+  animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-logo-slider-section {
+    padding: 40px 0;
+  }
+
+  .portfolio-logo-slide {
+    padding: 0 30px;
+    min-width: 150px;
+  }
+
+  .portfolio-logo-text {
+    font-size: 1.4rem;
+  }
+
+  .portfolio-logo-slider-track {
+    animation: portfolio-scroll 25s linear infinite;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-logo-slide {
+    padding: 0 20px;
+    min-width: 120px;
+  }
+
+  .portfolio-logo-text {
+    font-size: 1.2rem;
+  }
+
+  .portfolio-logo-slider-track {
+    animation: portfolio-scroll 20s linear infinite;
+  }
+}

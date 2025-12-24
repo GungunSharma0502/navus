@@ -1,0 +1,349 @@
+.features-showcase {
+  background: linear-gradient(135deg, #0a0a0a 0%, #012432 100%);
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.features-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left Content */
+.features-content {
+  padding-right: 40px;
+}
+
+.features-intro {
+  margin-bottom: 60px;
+}
+
+.features-intro-text {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.3;
+  margin: 0;
+  color: #b0b0b0;
+}
+
+.features-highlight {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.features-details {
+  margin-bottom: 50px;
+}
+
+.features-company {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  color: #ffffff;
+}
+
+.features-role {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #cccccc;
+  margin: 0 0 20px 0;
+}
+
+.features-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #999999;
+  margin: 0;
+}
+
+/* Skills Tags */
+.features-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.features-skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.features-skill-tag {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.features-skill-tag:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Right Content - Device Mockup */
+.features-device {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features-device-frame {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background: #000000;
+  border-radius: 40px;
+  padding: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  border: 8px solid #2a2a2a;
+  display: flex;
+}
+
+.features-device-screen {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 30px;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.features-device-sidebar {
+  width: 40px;
+  background: #0a0a0a;
+  border-radius: 0 20px 20px 0;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 8px;
+}
+
+/* Invoice Preview */
+.features-invoice-preview {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.features-invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.features-invoice-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003087;
+}
+
+.features-invoice-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.features-invoice-body {
+  color: #333333;
+}
+
+.features-invoice-details {
+  margin-bottom: 30px;
+}
+
+.features-invoice-line {
+  font-size: 0.95rem;
+  margin: 8px 0;
+  color: #666666;
+}
+
+.features-invoice-items {
+  margin: 30px 0;
+  padding: 20px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.features-invoice-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #333333;
+  padding: 10px 0;
+}
+
+.features-invoice-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .features-container {
+    gap: 60px;
+  }
+
+  .features-intro-text {
+    font-size: 2.5rem;
+  }
+
+  .features-company {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .features-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .features-content {
+    padding-right: 0;
+  }
+
+  .features-device-frame {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-showcase {
+    padding: 60px 15px;
+  }
+
+  .features-intro-text {
+    font-size: 2rem;
+  }
+
+  .features-company {
+    font-size: 1.8rem;
+  }
+
+  .features-role {
+    font-size: 1.2rem;
+  }
+
+  .features-description {
+    font-size: 1rem;
+  }
+
+  .features-skill-tag {
+    font-size: 0.75rem;
+    padding: 8px 16px;
+  }
+
+  .features-device-frame {
+    max-width: 400px;
+    padding: 10px;
+    border-width: 6px;
+  }
+
+  .features-device-screen {
+    padding: 20px;
+    min-height: 400px;
+  }
+
+  .features-device-sidebar {
+    width: 30px;
+  }
+
+  .features-invoice-logo {
+    font-size: 1.4rem;
+  }
+
+  .features-invoice-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-showcase {
+    padding: 40px 10px;
+  }
+
+  .features-intro-text {
+    font-size: 1.6rem;
+  }
+
+  .features-company {
+    font-size: 1.5rem;
+  }
+
+  .features-role {
+    font-size: 1rem;
+  }
+
+  .features-description {
+    font-size: 0.9rem;
+  }
+
+  .features-skill-row {
+    gap: 8px;
+  }
+
+  .features-skill-tag {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+
+  .features-device-frame {
+    max-width: 100%;
+    border-radius: 30px;
+  }
+
+  .features-device-screen {
+    padding: 15px;
+    min-height: 350px;
+  }
+
+  .features-invoice-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .features-invoice-logo {
+    font-size: 1.2rem;
+  }
+
+  .features-invoice-title {
+    font-size: 1rem;
+  }
+
+  .features-invoice-line {
+    font-size: 0.85rem;
+  }
+
+  .features-invoice-item {
+    font-size: 0.9rem;
+  }
+
+  .features-invoice-total {
+    font-size: 1.1rem;
+  }
+}
