@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './css/ServiceSection.css';
+import CharacterAnimation from '../assets/Character.json';
 
 const ServiceSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const lottieContainer = useRef(null);
 
   const slides = [
     [
@@ -45,10 +47,46 @@ const ServiceSection = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 2);
+      setCurrentSlide((prev) => (prev + 1) % 3);
     }, 4000);
 
     return () => clearInterval(timer);
+  }, []);
+
+  // Load Lottie animation
+  useEffect(() => {
+    let animation = null;
+
+    const loadLottie = () => {
+      if (lottieContainer.current && window.lottie) {
+        try {
+          animation = window.lottie.loadAnimation({
+            container: lottieContainer.current,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: CharacterAnimation
+          });
+        } catch (error) {
+          console.error('Error loading Lottie:', error);
+        }
+      }
+    };
+
+    // Load Lottie script
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';
+    script.onload = loadLottie;
+    document.body.appendChild(script);
+
+    return () => {
+      if (animation) {
+        animation.destroy();
+      }
+      if (script.parentNode) {
+        document.body.removeChild(script);
+      }
+    };
   }, []);
 
   return (
@@ -57,44 +95,17 @@ const ServiceSection = () => {
         {/* Left Side - Lottie Animation */}
         <div className="service-left">
           <div className="service-lottie-wrapper">
-            <div className="service-lottie-placeholder">
-              <div className="service-z-logo">N</div>
-              <div className="service-grid-animation">
-                <div className="service-grid-layer service-layer-1"></div>
-                <div className="service-grid-layer service-layer-2"></div>
-                <div className="service-grid-layer service-layer-3"></div>
-              </div>
-              <div className="service-particles">
-                {[...Array(20)].map((_, i) => (
-                  <div 
-                    key={i} 
-                    className="service-particle"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      animationDelay: `${Math.random() * 2}s`
-                    }}
-                  ></div>
-                ))}
-              </div>
-              <div className="service-pillars">
-                <div className="service-pillar service-pillar-1"></div>
-                <div className="service-pillar service-pillar-2"></div>
-                <div className="service-pillar service-pillar-3"></div>
-              </div>
-            </div>
+            <div ref={lottieContainer} className="service-lottie-container"></div>
           </div>
         </div>
 
         {/* Right Side - Content */}
         <div className="service-right">
           <h1 className="service-title">
-            Navus  <span className="service-highlight">IT Services</span>
+            Navus <span className="service-highlight">IT Services</span>
           </h1>
           <p className="service-subtitle">
-           
-We Are A Digital Marketing, Website Designing & Social Media Marketing In Faridabad and Trustworthy name in a zone of Digital Marketing,Website design & Development, & SMO and Social Media Marketing. We create websites for your Small, Medium and large business enterprise.
-
+            We Are A Digital Marketing, Website Designing & Social Media Marketing In Faridabad and Trustworthy name in a zone of Digital Marketing, Website design & Development, & SMO and Social Media Marketing. We create websites for your Small, Medium and large business enterprise.
           </p>
 
           {/* Cards Grid */}
