@@ -8,37 +8,37 @@ const ServiceSection = () => {
     [
       {
         icon: "🤖",
-        title: "Responsible AI",
-        description: "Built with governance, fairness, and ethical safeguards to detect and reduce toxicity, bias, and model drift."
+        title: "Marketing",
+        description: "Advertising/PPC For Products - Reach potential customers with their search query or interaction!"
       },
       {
         icon: "🔒",
-        title: "Privacy",
-        description: "Designed with enterprise-grade privacy controls to protect sensitive data, ensure compliance, and enforce access boundaries."
+        title: "Strategy",
+        description: "Crafting impactful action plans, optimizing business strategies for enduring success."
       }
     ],
     [
       {
         icon: "🛡️",
-        title: "Security",
-        description: "Embedded with zero-trust guardrails, role-based access, and encryption to secure every layer of your AI stack."
+        title: "UX Design",
+        description: "Create, upload, optimize product listings tailored for ideal customers and audience."
       },
       {
         icon: "✓",
-        title: "Verifiability",
-        description: "Every insight is traceable and auditable—so you know what your AI is doing, and why."
+        title: "Marketplace Audit",
+        description: "Identify, assess, report loopholes hindering product/strategy success; provide effective solutions."
       }
     ],
     [
       {
         icon: "🛡️",
-        title: "Advanced Security",
-        description: "Embedded with zero-trust guardrails, role-based access, and encryption to secure every layer of your AI stack."
+        title: "Development",
+        description: "Crafting compelling content for increased website traffic and business expansion."
       },
       {
         icon: "✓",
-        title: "Technology Verifiability",
-        description: "Every insight is traceable and auditable—so you know what your AI is doing, and why."
+        title: "Link Building",
+        description: "Enhance website visibility with strategic link building for top Google rankings."
       }
     ]
   ];
@@ -89,10 +89,12 @@ const ServiceSection = () => {
         {/* Right Side - Content */}
         <div className="service-right">
           <h1 className="service-title">
-            Introducing <span className="service-highlight">Z-Grid™</span>
+            Navus  <span className="service-highlight">IT Services</span>
           </h1>
           <p className="service-subtitle">
-            The Engine of Trusted Intelligence, the Four Pillars of Z-Grid Responsible AI
+           
+We Are A Digital Marketing, Website Designing & Social Media Marketing In Faridabad and Trustworthy name in a zone of Digital Marketing,Website design & Development, & SMO and Social Media Marketing. We create websites for your Small, Medium and large business enterprise.
+
           </p>
 
           {/* Cards Grid */}

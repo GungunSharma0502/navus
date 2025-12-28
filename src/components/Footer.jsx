@@ -71,7 +71,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>
-          Navus IT Services. All Rights Reserved. 
+          Navus IT Services. All Rights Reserved.      
           <a href="#terms" className="footer-bottom-link">Terms of Use</a>
           <a href="#privacy" className="footer-bottom-link">Privacy Policy</a>
         </p>

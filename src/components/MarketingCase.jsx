@@ -9,11 +9,7 @@ const MarketingCase = () => {
     <div className="marketing-case2-container">
       {/* Section 1 - Heading */}
     
-        <div className="marketing-case2-content-wrapper">
-          <h1 className="marketing-case2-heading">
-            Selected work <span className="marketing-case2-heading-light">that makes lives better</span> and businesses stronger.
-          </h1>
-        </div>
+      
         
       
 
@@ -28,24 +24,26 @@ const MarketingCase = () => {
         </div>
         
         <div className="marketing-case2-case-content">
-          <h2 className="marketing-case2-company-name">Qapital</h2>
-          <h3 className="marketing-case2-role">Director of Product Design</h3>
+          <h2 className="marketing-case2-company-name">DISTRIBUTING YOUR MARKETING CAMPAIGN</h2>
+          <h3 className="marketing-case2-role">Focus on all of the key features for your product</h3>
           <p className="marketing-case2-description">
             Led the product design team at Qapital, building and scaling a thriving design organization that attracted top-tier designers and researchers, fostered a healthy culture, and elevated design as a driver of product and business success.
           </p>
           
           <div className="marketing-case2-tags">
-            <span className="marketing-case2-tag">LEADERSHIP</span>
-            <span className="marketing-case2-tag">DESIGN STRATEGY</span>
-            <span className="marketing-case2-tag">EXPERIENCE LED</span>
-            <span className="marketing-case2-tag">FINTECH</span>
-            <span className="marketing-case2-tag">STRATEGIC RESEARCH</span>
-            <span className="marketing-case2-tag">EXPERIENCE VISION</span>
-            <span className="marketing-case2-tag">STAFF</span>
-            <span className="marketing-case2-tag">STAKEHOLDER MANAGEMENT</span>
+            <span className="marketing-case2-tag">Brand Awareness</span>
+            
+            <span className="marketing-case2-tag">Digital Growth Strategy</span>
+            <span className="marketing-case2-tag">Audience Targeting</span>
+           
+            <span className="marketing-case2-tag">Performance Tracking</span>
+            <span className="marketing-case2-tag">Conversion Optimization</span>
+            <span className="marketing-case2-tag">Marketing Automation</span>
+             <span className="marketing-case2-tag">Multi-Channel Distribution</span>
+             <span className="marketing-case2-tag">Product & Service Promotion</span>
           </div>
           
-          <button className="marketing-case2-button">View Case Story</button>
+          <button className="marketing-case2-button">View Campaign Strategy</button>
         </div>
         
         <div className="marketing-case2-arrow">
@@ -67,21 +65,21 @@ const MarketingCase = () => {
         
         <div className="marketing-case2-case-content">
           <div className="marketing-case2-logo-wrapper">
-            <h2 className="marketing-case2-company-name">Zettle</h2>
-            <p className="marketing-case2-by-text">by PayPal</p>
+            <h2 className="marketing-case2-company-name">WE SEEK THE MOST EFFICIENT CAMPAIGNS</h2>
+           
           </div>
-          <h3 className="marketing-case2-role">Area Design Lead</h3>
+          <h3 className="marketing-case2-role">Converting clients through your marketing campaign</h3>
           <p className="marketing-case2-description">
-            I built shared knowledge of how money flows between Zettle and PayPal, translating complex financial processes into clearer, more seamless user experiences.
+           Every digital marketing project has different challenges and each business has its own unique needs. That’s why we offer personalized solutions for your business.
           </p>
           
           <div className="marketing-case2-tags">
-            <span className="marketing-case2-tag">AREA LEAD</span>
-            <span className="marketing-case2-tag">EXPERIENCE LED</span>
-            <span className="marketing-case2-tag">FINTECH</span>
-            <span className="marketing-case2-tag">TRANSFORMATION</span>
-            <span className="marketing-case2-tag">DESIGN STRATEGY</span>
-            <span className="marketing-case2-tag">STAKEHOLDER MANAGEMENT</span>
+            <span className="marketing-case2-tag">Brand Awareness & Visibility</span>
+            <span className="marketing-case2-tag">Digital Growth Strategy</span>
+            <span className="marketing-case2-tag">Audience Targeting & Segmentation</span>
+            <span className="marketing-case2-tag">Multi-Channel Campaign Distribution</span>
+            <span className="marketing-case2-tag">Performance Tracking & Analytics</span>
+            <span className="marketing-case2-tag">Marketing Automation & Lead Nurturing </span>
           </div>
           
           <button className="marketing-case2-button">View Case Story</button>

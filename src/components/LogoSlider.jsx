@@ -2,28 +2,58 @@ import React from 'react';
 import './css/LogoSlider.css';
 
 const LogoSlider = () => {
-  const logos = [
-    { name: 'Goodly', image: '/logos/goodly.png' },
-    { name: 'Klarna', image: '/logos/klarna.png' },
-    { name: 'Viaplay', image: '/logos/viaplay.png' },
-    { name: 'Doktor24', image: '/logos/doktor24.png' },
-    { name: 'Spotify', image: '/logos/spotify.png' },
-    { name: 'Qapital', image: '/logos/qapital.png' },
-    { name: 'Zettle', image: '/logos/zettle.png' },
-    { name: 'PayPal', image: '/logos/paypal.png' }
+  const infoItems = [
+    { 
+      name: 'Help Desk', 
+      link: '#helpdesk',
+      type: 'link'
+    },
+    { 
+      name: 'Why Us', 
+      link: '#whyus',
+      type: 'link'
+    },
+    { 
+      name: '(+91) 8750012222', 
+      link: 'tel:+918750012222',
+      type: 'phone'
+    },
+    { 
+      name: 'info@navustech.com', 
+      link: 'mailto:info@navustech.com',
+      type: 'email'
+    },
+    { 
+      name: 'Mon - Sat: 9:00 - 17:30', 
+      type: 'text'
+    }
   ];
 
-  // Duplicate logos for seamless loop
-  const duplicatedLogos = [...logos, ...logos];
+  // Duplicate items for seamless loop
+  const duplicatedItems = [...infoItems, ...infoItems, ...infoItems];
 
   return (
     <div className="portfolio-logo-slider-section">
       <div className="portfolio-logo-slider-container">
         <div className="portfolio-logo-slider-track">
-          {duplicatedLogos.map((logo, index) => (
+          {duplicatedItems.map((item, index) => (
             <div key={index} className="portfolio-logo-slide">
               <div className="portfolio-logo-wrapper">
-                <span className="portfolio-logo-text">{logo.name}</span>
+                {item.type === 'link' ? (
+                  <a href={item.link} className="portfolio-info-link">
+                    {item.name}
+                  </a>
+                ) : item.type === 'phone' ? (
+                  <a href={item.link} className="portfolio-info-link portfolio-info-phone">
+                    {item.name}
+                  </a>
+                ) : item.type === 'email' ? (
+                  <a href={item.link} className="portfolio-info-link portfolio-info-email">
+                    {item.name}
+                  </a>
+                ) : (
+                  <span className="portfolio-logo-text">{item.name}</span>
+                )}
               </div>
             </div>
           ))}

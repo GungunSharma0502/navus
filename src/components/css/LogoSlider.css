@@ -12,64 +12,85 @@
 
 .portfolio-logo-slider-track {
   display: flex;
-  animation: portfolio-scroll 30s linear infinite;
+  animation: portfolio-scroll 40s linear infinite;
   width: fit-content;
 }
 
 .portfolio-logo-slide {
   flex-shrink: 0;
-  padding: 0 20px;
+  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 200px;
+  min-width: 250px;
 }
 
 .portfolio-logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .portfolio-logo-slide:hover .portfolio-logo-wrapper {
   opacity: 1;
+  transform: scale(1.05);
 }
 
 .portfolio-logo-text {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: #ffffff;
   white-space: nowrap;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Klarna specific styling */
-.portfolio-logo-slide:nth-child(2) .portfolio-logo-text,
-.portfolio-logo-slide:nth-child(10) .portfolio-logo-text {
-  font-weight: 300;
-  letter-spacing: -1px;
-}
-
-/* Viaplay specific styling */
-.portfolio-logo-slide:nth-child(3) .portfolio-logo-text,
-.portfolio-logo-slide:nth-child(11) .portfolio-logo-text {
+.portfolio-info-link {
+  font-size: 1.1rem;
   font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* Doktor24 specific styling */
-.portfolio-logo-slide:nth-child(4) .portfolio-logo-text,
-.portfolio-logo-slide:nth-child(12) .portfolio-logo-text {
-  font-family: monospace;
-  font-weight: 700;
+.portfolio-info-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background-color: #4a9eff;
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
-/* Spotify specific styling */
-.portfolio-logo-slide:nth-child(5) .portfolio-logo-text,
-.portfolio-logo-slide:nth-child(13) .portfolio-logo-text {
-  font-weight: 700;
-  letter-spacing: -0.5px;
+.portfolio-info-link:hover {
+  color: #4a9eff;
+}
+
+.portfolio-info-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.portfolio-info-phone:hover {
+  color: #4caf50;
+}
+
+.portfolio-info-phone:hover::after {
+  background-color: #4caf50;
+}
+
+.portfolio-info-email:hover {
+  color: #ff9800;
+}
+
+.portfolio-info-email:hover::after {
+  background-color: #ff9800;
 }
 
 /* Animation */
@@ -78,7 +99,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-33.333%);
   }
 }
 
@@ -87,37 +108,83 @@
   animation-play-state: paused;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
   .portfolio-logo-slider-section {
-    padding: 40px 0;
+    padding: 12px 0;
   }
 
   .portfolio-logo-slide {
-    padding: 0 30px;
+    padding: 0 25px;
+    min-width: 220px;
+  }
+
+  .portfolio-logo-text,
+  .portfolio-info-link {
+    font-size: 1rem;
+  }
+
+  .portfolio-logo-slider-track {
+    animation: portfolio-scroll 35s linear infinite;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .portfolio-logo-slider-section {
+    padding: 10px 0;
+  }
+
+  .portfolio-logo-slide {
+    padding: 0 20px;
+    min-width: 180px;
+  }
+
+  .portfolio-logo-text,
+  .portfolio-info-link {
+    font-size: 0.9rem;
+  }
+
+  .portfolio-logo-slider-track {
+    animation: portfolio-scroll 30s linear infinite;
+  }
+}
+
+/* Responsive Design for Small Mobile */
+@media (max-width: 480px) {
+  .portfolio-logo-slider-section {
+    padding: 8px 0;
+  }
+
+  .portfolio-logo-slide {
+    padding: 0 15px;
     min-width: 150px;
   }
 
-  .portfolio-logo-text {
-    font-size: 1.4rem;
+  .portfolio-logo-text,
+  .portfolio-info-link {
+    font-size: 0.85rem;
   }
 
   .portfolio-logo-slider-track {
     animation: portfolio-scroll 25s linear infinite;
   }
+
+  .portfolio-info-link::after {
+    height: 1.5px;
+    bottom: -3px;
+  }
 }
 
-@media (max-width: 480px) {
+/* Extra Small Devices */
+@media (max-width: 360px) {
   .portfolio-logo-slide {
-    padding: 0 20px;
-    min-width: 120px;
+    padding: 0 12px;
+    min-width: 130px;
   }
 
-  .portfolio-logo-text {
-    font-size: 1.2rem;
-  }
-
-  .portfolio-logo-slider-track {
-    animation: portfolio-scroll 20s linear infinite;
+  .portfolio-logo-text,
+  .portfolio-info-link {
+    font-size: 0.8rem;
   }
 }

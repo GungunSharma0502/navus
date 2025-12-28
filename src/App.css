@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Prevent all elements from causing horizontal scroll */
+* {
+  max-width: 100%;
+}
+
+/* Ensure containers don't overflow */
+.container,
+div,
+section {
+  max-width: 100vw;
+}
+
+/* Prevent images from overflowing */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide horizontal scrollbar completely */
+::-webkit-scrollbar-x {
+  display: none;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Keep vertical scrolling smooth */
+html {
+  scroll-behavior: smooth;
+
+   overflow-y: hidden;
+}
