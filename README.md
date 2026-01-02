@@ -15,6 +15,6 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-
+C:\Users\sharm\AppData\Local\Android\Sdk
 
   mujhe esi hi chiye file amazon esi hi design chiye amazon.jsx and amazon.css and amazon use krna word as prefix for all classnames  donot use tailwind css  same color coding and styling chiye

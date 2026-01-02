@@ -7,33 +7,51 @@ const ReviewSection = () => {
   const reviews = [
     {
       id: 1,
-      title: "Gendawali Kumari",
-      description: "My experience has been amazing with Navus IT Services. They have managed my account in such a professional manner that from the day I have taken their services each and every aspect of my account is well maintained.",
+      title: "AllesOben - Looking forward to more expectations Finegrow Team",
+      description: "I am delighted to share my feedback regarding the exceptional results we have witnessed after using your services. Your company truly stands out as the best choice for account management services. The level of excellence you have consistently delivered has made a significant impact on our operations, and we couldn't be more satisfied with the outcomes. Thank you for your dedication and expertise in helping us achieve our goals.",
       image: "https://images.unsplash.com/photo-1621274790572-7c32596bc67f?w=800&q=80"
     },
     {
       id: 2,
-      title: "Rohullah Rasikh",
-      description: "Vansh is an exceptional Amazon manager. His expertise and dedication have greatly boosted our sales and rankings.",
+      title: "DIGITAL DESIGNING LAB - Communication was smooth and they explained everything clearly",
+      description: "I am very satisfied with the service provided by the SPN team. They were professional, knowledgeable, and completed all tasks on time. My listings and ads were optimized perfectly",
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80"
     },
     {
       id: 3,
-      title: "Frosch India Naia",
-      description: "Impressed with the services of Navus. Best part is that they increased my visibility of products with sales on Amazon. Looking forward for Flipkart.",
+      title: "Khodiyar Enterprise - very supportive and understanding",
+      description: "The account manager provided from there side was very supportive and understanding and is very helpful.",
       image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&q=80"
     },
     {
       id: 4,
-      title: "Shivam Fidato Sharma",
-      description: "I have enjoyed the services by Navus IT Services. They know what to do and that's what I appreciate most.",
+      title: "KAPER ENTERPRISES",
+      description: "The SPN manger was very cooperative and helped me with account product listing, and optimization. Their services saved me time and improved my overall experience as a seller.",
       image: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&q=80"
     },
     {
       id: 5,
-      title: "Nitin Fernandes",
-      description: "Very experienced and helpful staff at Navus, they help customers to their best, special word for Tulsi and Ankit ?",
+      title: "Starline - Excellent Support for Amazon Listings & Account Management",
+      description: "Excellent Support for Amazon Listings & Account Management",
       image: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&q=80"
+    },
+    {
+      id: 6,
+      title: "Courtney Schiefelbein, DMD - Great Service!",
+      description: "Very professional, efficient, and timely. The team is responsive and helped me clean up and optimize my amazon items quickly and cost-efficiently. We are now working on optimizing ad-campaigns, and I'm similarly impressed. I highly recommend them.",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
+    },
+    {
+      id: 7,
+      title: "Alfa Design - Experienced team",
+      description: "Experienced team. Quickly understood the top keyword for my product. By maintaining standard ACOS, bring sales to some of my never-sold items.",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80"
+    },
+    {
+      id: 8,
+      title: "RISHAB BANSAL - Finegrow has done an excellent job managing our Amazon ads",
+      description: "Finegrow has done an excellent job managing our Amazon ads. His deep understanding of ad strategies, consistent optimization, and focus on results have brought great improvements in our performance. He is professional, responsive, and truly dedicated to helping the brand grow. Highly recommended for anyone looking for expert Amazon advertising support!",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80"
     }
   ];
 

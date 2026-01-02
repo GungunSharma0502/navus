@@ -91,6 +91,27 @@
   transform-origin: center center;
 }
 
+/* Card 6 - Extra Far Left */
+.review-card-6 {
+  z-index: 1;
+  transform: translateX(-350px) translateY(120px) rotate(-22deg) scale(0.65);
+  transform-origin: center center;
+}
+
+/* Card 7 - Extra Far Right */
+.review-card-7 {
+  z-index: 1;
+  transform: translateX(350px) translateY(120px) rotate(22deg) scale(0.65);
+  transform-origin: center center;
+}
+
+/* Card 8 - Hidden Far Left */
+.review-card-8 {
+  z-index: 0;
+  transform: translateX(-400px) translateY(150px) rotate(-25deg) scale(0.55);
+  transform-origin: center center;
+}
+
 .review-card-image-container {
   position: relative;
   width: 100%;
@@ -170,6 +191,18 @@
   .review-card-5 {
     transform: translateX(230px) translateY(80px) rotate(18deg) scale(0.75);
   }
+
+  .review-card-6 {
+    transform: translateX(-300px) translateY(120px) rotate(-22deg) scale(0.65);
+  }
+
+  .review-card-7 {
+    transform: translateX(300px) translateY(120px) rotate(22deg) scale(0.65);
+  }
+
+  .review-card-8 {
+    transform: translateX(-350px) translateY(150px) rotate(-25deg) scale(0.55);
+  }
 }
 
 @media (max-width: 768px) {
@@ -201,6 +234,18 @@
 
   .review-card-5 {
     transform: translateX(150px) translateY(60px) rotate(15deg) scale(0.7);
+  }
+
+  .review-card-6 {
+    transform: translateX(-200px) translateY(90px) rotate(-20deg) scale(0.6);
+  }
+
+  .review-card-7 {
+    transform: translateX(200px) translateY(90px) rotate(20deg) scale(0.6);
+  }
+
+  .review-card-8 {
+    transform: translateX(-250px) translateY(120px) rotate(-25deg) scale(0.5);
   }
 
   .review-card-title {
