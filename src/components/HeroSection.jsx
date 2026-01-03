@@ -290,17 +290,13 @@ const HeroSection = () => {
           box-sizing: border-box;
         }
 
-        body {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
+       
       `}</style>
 
       <section className="heroSectionContainer">
         <div className="heroSectionContent">
           <div className="heroSectionAnimationWrapper">
-            <div className="heroZLogo">N</div>
+            <div className="heroZLogo">FG</div>
             <div className="heroGridAnimation">
               <div className="heroGridLayer heroLayer1"></div>
               <div className="heroGridLayer heroLayer2"></div>
@@ -333,7 +329,7 @@ const HeroSection = () => {
           </h1>
           
           <p className="heroSectionSubtitle">
-          Welcome to navus IT services |  We are a digital marketing agency
+          Welcome to Fine Grow Solutions IT services |  We are a digital marketing agency
           </p>
           
           <div className="heroSectionScrollIndicator">

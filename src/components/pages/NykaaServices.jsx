@@ -1,17 +1,17 @@
 import React from 'react';
 import './NykaaServices.css';
+import { Link } from 'react-router-dom';
 
 const NykaaServices = () => {
   return (
     <div className="nykaa-container">
       {/* Hero Section */}
       <section className="nykaa-hero">
-        <div className="nykaa-wave-bg"></div>
         <div className="nykaa-hero-content">
-          <h1 className="nykaa-hero-title">Nykaa Seller Services</h1>
-          <p className="nykaa-hero-subtitle">Nykaa Marketplace Solutions for Beauty & Lifestyle Brands</p>
+          <h1 className="nykaa-hero-title"><span className="nykaa-text">Nykaa</span> Seller Services</h1>
+          <p className="nykaa-hero-subtitle"><span className="nykaa-text">Nykaa</span> Marketplace Solutions for Beauty & Lifestyle Brands</p>
           <p className="nykaa-hero-description">
-            Nykaa is a premium, highly curated marketplace where quality, brand presentation, and strict compliance matter more than anything. Unlike open marketplaces, Nykaa selects sellers carefully and expects consistent branding, accurate product information, and high-end visuals.
+            <span className="nykaa-text">Nykaa</span> is a premium, highly curated marketplace where quality, brand presentation, and strict compliance matter more than anything. Unlike open marketplaces, <span className="nykaa-text">Nykaa</span> selects sellers carefully and expects consistent branding, accurate product information, and high-end visuals.
           </p>
         </div>
       </section>
@@ -20,22 +20,21 @@ const NykaaServices = () => {
       <section className="nykaa-about">
         <div className="nykaa-about-content">
           <p className="nykaa-about-text">
-            Our experts help beauty, wellness, and lifestyle brands establish and grow a trusted, premium presence on Nykaa. From onboarding to ongoing performance optimization, we ensure your brand meets Nykaa's standards while maximizing visibility and sales.
+            Our experts help beauty, wellness, and lifestyle brands establish and grow a trusted, premium presence on <span className="nykaa-text">Nykaa</span>. From onboarding to ongoing performance optimization, we ensure your brand meets <span className="nykaa-text">Nykaa</span>'s standards while maximizing visibility and sales.
           </p>
         </div>
       </section>
 
       {/* Services Section */}
       <section className="nykaa-services">
-        <div className="nykaa-wave-bg-alt"></div>
         <div className="nykaa-services-content">
-          <h2 className="nykaa-section-title">Our Nykaa Services</h2>
+          <h2 className="nykaa-section-title">Our <span className="nykaa-text">Nykaa</span> Services</h2>
           <div className="nykaa-services-grid">
             <div className="nykaa-service-card">
               <div className="nykaa-service-icon">📋</div>
               <h3 className="nykaa-service-title">Seller Onboarding & Documentation</h3>
               <p className="nykaa-service-description">
-                Complete support with Nykaa seller onboarding, documentation, brand approvals, and category eligibility to ensure a smooth launch.
+                Complete support with <span className="nykaa-text">Nykaa</span> seller onboarding, documentation, brand approvals, and category eligibility to ensure a smooth launch.
               </p>
             </div>
 
@@ -43,7 +42,7 @@ const NykaaServices = () => {
               <div className="nykaa-service-icon">📦</div>
               <h3 className="nykaa-service-title">Product Listing & Catalogue Management</h3>
               <p className="nykaa-service-description">
-                Accurate, well-structured product listings with the right attributes, claims, and descriptions aligned with Nykaa's quality guidelines.
+                Accurate, well-structured product listings with the right attributes, claims, and descriptions aligned with <span className="nykaa-text">Nykaa</span>'s quality guidelines.
               </p>
             </div>
 
@@ -59,7 +58,7 @@ const NykaaServices = () => {
               <div className="nykaa-service-icon">✓</div>
               <h3 className="nykaa-service-title">Compliance & Category Guidelines</h3>
               <p className="nykaa-service-description">
-                Strict adherence to Nykaa's policies, ingredient disclosures, certifications, and category-specific regulations to avoid listing rejections.
+                Strict adherence to <span className="nykaa-text">Nykaa</span>'s policies, ingredient disclosures, certifications, and category-specific regulations to avoid listing rejections.
               </p>
             </div>
 
@@ -113,7 +112,7 @@ const NykaaServices = () => {
             </div>
             <div className="nykaa-result-item">
               <span className="nykaa-result-icon">✔</span>
-              <span className="nykaa-result-text">Sustainable growth on Nykaa</span>
+              <span className="nykaa-result-text">Sustainable growth on <span className="nykaa-text">Nykaa</span></span>
             </div>
           </div>
         </div>
@@ -121,11 +120,12 @@ const NykaaServices = () => {
 
       {/* CTA Section */}
       <section className="nykaa-cta">
-        <div className="nykaa-wave-bg"></div>
         <div className="nykaa-cta-content">
           <h2 className="nykaa-cta-title">Perfect for Beauty, Wellness, and Lifestyle Brands</h2>
           <p className="nykaa-cta-text">Looking to grow on a premium marketplace?</p>
-          <button className="nykaa-cta-button">Get Started Today</button>
+          <button className="nykaa-cta-button">
+            <Link to="/contact" className="nykaa-cta-buttonn">Get Started Today</Link>
+          </button>
         </div>
       </section>
     </div>

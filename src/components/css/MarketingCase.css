@@ -2,11 +2,9 @@
 
 .marketing-case2-container {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  background-color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 .marketing-case2-section {
@@ -17,31 +15,7 @@
   align-items: center;
   padding: 80px 20px;
   position: relative;
-}
-
-/* Hero Section */
-.marketing-case2-hero {
-  justify-content: center;
-}
-
-/* Heading Section */
-.marketing-case2-content-wrapper {
-  max-width: 800px;
-  text-align: center;
-}
-
-.marketing-case2-heading {
-  font-size: 56px;
-  font-weight: 600;
-  line-height: 1.2;
-  color: #1a1a1a;
-  margin: 0;
-  text-align: center;
-}
-
-.marketing-case2-heading-light {
-  color: #999;
-  font-weight: 400;
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 /* Image Wrapper */
@@ -49,36 +23,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 60px; */
   width: 100%;
+  margin-bottom: 40px;
 }
 
-.marketing-case2-phone-image {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-  /* border-radius: 20px; */
-  /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); */
+.marketing-case2-image-circle {
+  width: 300px;
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Arrow */
-.marketing-case2-arrow {
-  margin-top: 60px;
-  animation: marketing-case2-bounce 2s infinite;
+.marketing-case2-image-circle:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
 }
 
-@keyframes marketing-case2-bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
+.marketing-case2-image-circle svg {
+  width: 200px;
+  height: 200px;
 }
 
 /* Case Content */
 .marketing-case2-case-content {
-  max-width: 700px;
+  max-width: 1200px;
   text-align: center;
   padding: 40px;
   width: 100%;
@@ -88,18 +61,12 @@
   font-size: 48px;
   font-weight: 700;
   color: #1a1a1a;
-  margin: 0 0 20px 0;
+  margin: 0 0 5px 0;
+  letter-spacing: -0.5px;
 }
 
 .marketing-case2-logo-wrapper {
   margin-bottom: 20px;
-}
-
-.marketing-case2-by-text {
-  font-size: 14px;
-  color: #666;
-  margin: 5px 0 0 0;
-  font-style: italic;
 }
 
 .marketing-case2-role {
@@ -107,13 +74,14 @@
   font-weight: 500;
   color: #333;
   margin: 0 0 30px 0;
+  line-height: 1.4;
 }
 
 .marketing-case2-description {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #666;
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
 }
 
 /* Tags */
@@ -122,46 +90,33 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .marketing-case2-tag {
-  padding: 8px 16px;
-  background-color: #e0e0e0;
-  color: #666;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
+  color: #495057;
   font-size: 12px;
   font-weight: 600;
-  border-radius: 20px;
+  border-radius: 25px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-/* Button */
-.marketing-case2-button {
-  padding: 16px 40px;
-  background-color: transparent;
-  color: #1a1a1a;
-  font-size: 16px;
-  font-weight: 600;
-  border: 2px solid #1a1a1a;
-  border-radius: 30px;
-  cursor: pointer;
+  border: 1px solid #dee2e6;
   transition: all 0.3s ease;
 }
 
-.marketing-case2-button:hover {
-  background-color: #1a1a1a;
-  color: #fff;
+.marketing-case2-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  color: #212529;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .marketing-case2-heading {
-    font-size: 36px;
-  }
-  
   .marketing-case2-company-name {
-    font-size: 36px;
+    font-size: 32px;
   }
   
   .marketing-case2-role {
@@ -172,8 +127,14 @@
     font-size: 16px;
   }
   
-  .marketing-case2-phone-image {
-    max-width: 350px;
+  .marketing-case2-image-circle {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .marketing-case2-image-circle svg {
+    width: 160px;
+    height: 160px;
   }
   
   .marketing-case2-section {
@@ -181,10 +142,35 @@
   }
   
   .marketing-case2-image-wrapper {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   
-  .marketing-case2-arrow {
-    margin-top: 40px;
+  .marketing-case2-tag {
+    font-size: 11px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .marketing-case2-company-name {
+    font-size: 24px;
+  }
+  
+  .marketing-case2-role {
+    font-size: 18px;
+  }
+  
+  .marketing-case2-description {
+    font-size: 15px;
+  }
+  
+  .marketing-case2-image-circle {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .marketing-case2-image-circle svg {
+    width: 130px;
+    height: 130px;
   }
 }

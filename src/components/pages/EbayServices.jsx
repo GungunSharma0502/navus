@@ -1,5 +1,6 @@
 import React from 'react';
 import './Ebay.css';
+import { Link } from 'react-router-dom';
 
 const EbayServices = () => {
   return (
@@ -20,7 +21,7 @@ const EbayServices = () => {
       <section className="ebay-about">
         <div className="ebay-about-content">
           <p className="ebay-about-text">
-            Fine Grow Solutions helps sellers launch, manage, and scale their eBay stores with global-ready strategies designed to increase visibility, conversions, and cross-border sales. Whether you're new to eBay or looking to expand internationally, we handle the complexity while you focus on growth.
+            Fine Grow helps sellers launch, manage, and scale their eBay stores with global-ready strategies designed to increase visibility, conversions, and cross-border sales. Whether you are new to eBay or looking to expand internationally, we handle the complexity while you focus on growth.
           </p>
         </div>
       </section>
@@ -124,8 +125,10 @@ const EbayServices = () => {
         <div className="ebay-wave-bg"></div>
         <div className="ebay-cta-content">
           <h2 className="ebay-cta-title">Sell Smarter. Scale Globally.</h2>
-          <p className="ebay-cta-text">Expert eBay management with confidence</p>
-          <button className="ebay-cta-button">Start Selling Globally</button>
+          <p className="ebay-cta-text">Expert eBay management with Fine Grow</p>
+          <button className="ebay-cta-button">
+         <Link to="/contact" className="ebay-cta-buttonn">Get Started Today</Link>
+          </button>
         </div>
       </section>
     </div>

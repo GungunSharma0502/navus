@@ -1,29 +1,23 @@
+import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png';
-import React, { useState } from 'react';
 
 const navbarStyles = `
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .navbarContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background: #07111bff;
+ 
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+
+  background: #ffffff;
   backdrop-filter: blur(10px);
-  z-index: 1000;
-  padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ 
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .navbarContent {
@@ -34,6 +28,7 @@ body {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  gap: 2rem;
 }
 
 .navbarLogo {
@@ -62,7 +57,7 @@ body {
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: #1a1a1a;
   font-size: 1.8rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -97,10 +92,10 @@ body {
 }
 
 .navbarLink {
-  color: rgba(255, 255, 255, 0.7);
+  color: #4a4a4a;
   text-decoration: none;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   transition: color 0.3s ease;
   display: flex;
   align-items: center;
@@ -110,11 +105,12 @@ body {
 }
 
 .navbarLink:hover {
-  color: rgba(255, 255, 255, 1);
+  color: #1a1a1a;
 }
 
 .navbarLinkActive {
-  color: rgba(255, 255, 255, 1);
+  color: #1a1a1a;
+  font-weight: 600;
 }
 
 .navbarDropdownIcon {
@@ -133,14 +129,14 @@ body {
   left: 50%;
   transform: translateX(-50%);
   margin-top: 1rem;
-  background: #0a1929;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   min-width: 180px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .dropdownMenu.open {
@@ -163,19 +159,20 @@ body {
 }
 
 .dropdownItem:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .dropdownLink {
-  color: rgba(255, 255, 255, 0.7);
+  color: #4a4a4a;
   text-decoration: none;
   font-size: 0.95rem;
   display: block;
   transition: color 0.2s ease;
+  font-weight: 500;
 }
 
 .dropdownLink:hover {
-  color: rgba(255, 255, 255, 1);
+  color: #1a1a1a;
 }
 
 /* Tablet Styles */
@@ -189,14 +186,16 @@ body {
   }
 }
 
-/* Mobile Styles - IMPORTANT */
+/* Mobile Styles */
 @media (max-width: 768px) {
   .navbarContainer {
     padding: 0.75rem 0;
   }
 
   .navbarContent {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
+    max-width: 100%;
+    gap: 1rem;
   }
 
   .navbarLogoImg {
@@ -206,6 +205,7 @@ body {
 
   .mobileMenuButton {
     display: block !important;
+    margin-left: auto;
   }
 
   .navbarMenuWrapper {
@@ -216,7 +216,7 @@ body {
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: #07111bff;
+    background: #ffffff;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 5rem 0 2rem 0;
@@ -242,7 +242,7 @@ body {
     width: 100%;
     text-align: left;
     padding: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .navbarItem:last-child {
@@ -254,6 +254,7 @@ body {
     font-size: 1.1rem;
     padding: 1.2rem 2rem;
     width: 100%;
+    color: #2a2a2a;
   }
 
   .navbarItemDropdown .navbarLink {
@@ -265,7 +266,7 @@ body {
     transform: none;
     margin-top: 0;
     width: 100%;
-    background: rgba(10, 25, 41, 0.5);
+    background: rgba(0, 0, 0, 0.02);
     border: none;
     border-radius: 0;
     box-shadow: none;
@@ -293,10 +294,11 @@ body {
   .dropdownLink {
     padding: 1rem 3rem;
     font-size: 1rem;
+    color: #3a3a3a;
   }
 
   .dropdownItem:hover {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(0, 0, 0, 0.03);
   }
 }
 
@@ -307,6 +309,7 @@ body {
 
   .navbarContent {
     padding: 0 1rem;
+    gap: 0.75rem;
   }
 
   .navbarLogoImg {
@@ -331,6 +334,11 @@ body {
 }
 
 @media (max-width: 360px) {
+  .navbarContent {
+    padding: 0 0.75rem;
+    gap: 0.5rem;
+  }
+
   .navbarLogoImg {
     height: 35px;
     max-width: 100px;
@@ -362,6 +370,8 @@ if (typeof document !== 'undefined') {
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   const ecommerceLinks = [
     { name: 'Amazon', path: '/amazon-services' },
@@ -371,9 +381,28 @@ const Navbar = () => {
     { name: 'Ebay', path: '/ebay-services' }
   ];
 
+  const handleMouseEnter = () => {
+    if (window.innerWidth > 768) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      setIsDropdownOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth > 768) {
+      timeoutRef.current = setTimeout(() => {
+        setIsDropdownOpen(false);
+      }, 200);
+    }
+  };
+
   const toggleDropdown = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setIsDropdownOpen(!isDropdownOpen);
   };
 
@@ -389,117 +418,96 @@ const Navbar = () => {
     setIsDropdownOpen(false);
   };
 
-  const handleNavigation = (path) => {
-    console.log('Navigating to:', path);
-    closeMobileMenu();
-  };
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <>
-      <nav className="navbarContainer">
-        <div className="navbarContent">
-          <div className="navbarLogo">
-            <a 
-              href="/" 
-              className="navbarLogoLink"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavigation('/');
-              }}
-            >
-              <img 
-                src={Logo} 
-                alt="Company Logo" 
-                className="navbarLogoImg"
-              />
-            </a>
-          </div>
-
-          <button 
-            className="mobileMenuButton" 
-            onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? '✕' : '☰'}
-          </button>
-          
-          <div className={`navbarMenuWrapper ${isMobileMenuOpen ? 'open' : ''}`}>
-            <ul className="navbarMenu">
-              <li className="navbarItem">
-                <a 
-                  href="/" 
-                  className="navbarLink navbarLinkActive"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation('/');
-                  }}
-                >
-                  Home
-                </a>
-              </li>
-              
-              <li className="navbarItemDropdown">
-                <span className="navbarLink" onClick={toggleDropdown}>
-                  <span>E-Commerce</span>
-                  <span className={`navbarDropdownIcon ${isDropdownOpen ? 'open' : ''}`}>▼</span>
-                </span>
-                
-                <div className={`dropdownMenu ${isDropdownOpen ? 'open' : ''}`}>
-                  {ecommerceLinks.map((link, index) => (
-                    <div key={index} className="dropdownItem">
-                      <a 
-                        href={link.path}
-                        className="dropdownLink"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleNavigation(link.path);
-                        }}
-                      >
-                        {link.name}
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              </li>
-              
-              <li className="navbarItem">
-                <a 
-                  href="/about" 
-                  className="navbarLink"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation('/about');
-                  }}
-                >
-                  About us
-                </a>
-              </li>
-              
-              <li className="navbarItem">
-                <a 
-                  href="/contact" 
-                  className="navbarLink"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation('/contact');
-                  }}
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+    <nav className="navbarContainer">
+      <div className="navbarContent">
+        <div className="navbarLogo">
+          <Link to="/" className="navbarLogoLink" onClick={closeMobileMenu}>
+            <img 
+              src={Logo} 
+              alt="Company Logo" 
+              className="navbarLogoImg"
+            />
+          </Link>
         </div>
-      </nav>
-      
-      {/* Demo Content */}
-      <div style={{ paddingTop: '80px', padding: '100px 20px', background: '#0f1922', minHeight: '100vh' }}>
-        <h1 style={{ color: 'white', textAlign: 'center' }}>Welcome to Our Website</h1>
-        <p style={{ color: 'rgba(255,255,255,0.7)', textAlign: 'center', marginTop: '20px' }}>
-          Try resizing your browser or viewing on mobile to test the responsive navbar
-        </p>
+
+        <button 
+          className="mobileMenuButton" 
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? '✕' : '☰'}
+        </button>
+        
+        <div className={`navbarMenuWrapper ${isMobileMenuOpen ? 'open' : ''}`}>
+          <ul className="navbarMenu">
+            <li className="navbarItem">
+              <Link 
+                to="/" 
+                className="navbarLink navbarLinkActive"
+                onClick={closeMobileMenu}
+              >
+                Home
+              </Link>
+            </li>
+            
+            <li 
+              className="navbarItemDropdown"
+              ref={dropdownRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <span className="navbarLink" onClick={toggleDropdown}>
+                <span>E-Commerce</span>
+                <span className={`navbarDropdownIcon ${isDropdownOpen ? 'open' : ''}`}>▼</span>
+              </span>
+              
+              <div className={`dropdownMenu ${isDropdownOpen ? 'open' : ''}`}>
+                {ecommerceLinks.map((link, index) => (
+                  <div key={index} className="dropdownItem">
+                    <Link 
+                      to={link.path}
+                      className="dropdownLink"
+                      onClick={closeMobileMenu}
+                    >
+                      {link.name}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </li>
+            
+            <li className="navbarItem">
+              <Link 
+                to="/about" 
+                className="navbarLink"
+                onClick={closeMobileMenu}
+              >
+                About us
+              </Link>
+            </li>
+            
+            <li className="navbarItem">
+              <Link 
+                to="/contact" 
+                className="navbarLink"
+                onClick={closeMobileMenu}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
-    </>
+    </nav>
   );
 };
 

@@ -69,12 +69,7 @@ const Contact = () => {
           </svg>
         </div>
 
-        <button 
-          className="contact-theme-toggle"
-          onClick={() => setIsDark(!isDark)}
-        >
-          {isDark ? '☀️' : '🌙'}
-        </button>
+        
 
         <div className="contact-hero contact-animate">
           <h1 className="contact-hero-title">Get in Touch</h1>
@@ -198,7 +193,7 @@ const Contact = () => {
                 <Phone size={24} />
                 <div>
                   <h4>Phone</h4>
-                  <p>+1 (234) 567-8900</p>
+                  <p>+91 95600 82761 </p>
                 </div>
               </div>
 
@@ -206,7 +201,7 @@ const Contact = () => {
                 <Mail size={24} />
                 <div>
                   <h4>Email</h4>
-                  <p>hello@company.com</p>
+                  <p>finegrowamazon@gmail.com</p>
                 </div>
               </div>
 
@@ -214,12 +209,12 @@ const Contact = () => {
                 <MapPin size={24} />
                 <div>
                   <h4>Address</h4>
-                  <p>123 Business Street, Suite 100<br />New York, NY 10001</p>
+                  <p>12Th Avenue, RPS Building,  <br />&work, Tower 4, LG Floor</p>
                 </div>
               </div>
             </div>
 
-            <div className="contact-social">
+            {/* <div className="contact-social">
               <h3>Follow Us</h3>
               <div className="contact-social-icons">
                 <a href="#" className="contact-social-icon"><Facebook size={20} /></a>
@@ -227,7 +222,7 @@ const Contact = () => {
                 <a href="#" className="contact-social-icon"><Instagram size={20} /></a>
                 <a href="#" className="contact-social-icon"><Linkedin size={20} /></a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

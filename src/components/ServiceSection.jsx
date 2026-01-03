@@ -60,12 +60,18 @@ const ServiceSection = () => {
     const loadLottie = () => {
       if (lottieContainer.current && window.lottie) {
         try {
+          // Clear any existing content
+          lottieContainer.current.innerHTML = '';
+          
           animation = window.lottie.loadAnimation({
             container: lottieContainer.current,
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            animationData: CharacterAnimation
+            animationData: CharacterAnimation,
+            rendererSettings: {
+              preserveAspectRatio: 'xMidYMid meet'
+            }
           });
         } catch (error) {
           console.error('Error loading Lottie:', error);
@@ -102,7 +108,7 @@ const ServiceSection = () => {
         {/* Right Side - Content */}
         <div className="service-right">
           <h1 className="service-title">
-            Navus <span className="service-highlight">IT Services</span>
+            Fine Grow Solutions <span className="service-highlight">IT Services</span>
           </h1>
           <p className="service-subtitle">
             We Are A Digital Marketing, Website Designing & Social Media Marketing In Faridabad and Trustworthy name in a zone of Digital Marketing, Website design & Development, & SMO and Social Media Marketing. We create websites for your Small, Medium and large business enterprise.

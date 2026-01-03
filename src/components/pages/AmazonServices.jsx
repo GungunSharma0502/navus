@@ -1,5 +1,6 @@
 import React from 'react';
 import './Amazon.css';
+import { Link } from 'react-router-dom';
 
 const AmazonServices = () => {
   return (
@@ -141,7 +142,9 @@ const AmazonServices = () => {
         <div className="amazon-cta-content">
           <h2 className="amazon-cta-title">Scale Your Amazon Business Today</h2>
           <p className="amazon-cta-text">Expert account management for sustainable growth</p>
-          <button className="amazon-cta-button">Get Started Now</button>
+          <button className="amazon-cta-button">
+             <Link to="/contact" className="amazon-cta-buttonn">Get Started Today</Link>
+          </button>
         </div>
       </section>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Myntra.css';
+import { Link } from 'react-router-dom';
 
 const MyntraServices = () => {
   return (
@@ -125,7 +126,9 @@ const MyntraServices = () => {
         <div className="myntra-cta-content">
           <h2 className="myntra-cta-title">Turn Fashion Visibility into Real Sales</h2>
           <p className="myntra-cta-text">Expert Myntra account management for your brand</p>
-          <button className="myntra-cta-button">Get Started Today</button>
+          <button className="myntra-cta-button">
+             <Link to="/contact" className="nykaa-cta-buttonn">Get Started Today</Link>
+          </button>
         </div>
       </section>
     </div>

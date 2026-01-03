@@ -92,7 +92,7 @@ const About = () => {
               </div>
               <h3 className="about-stat-title">Branding</h3>
               <p className="about-stat-text">
-                Navus IT Services deliver Amazon account management to provide your customers with a satisfying experience.
+                Fine Grow Soltions IT Services deliver Amazon account management to provide your customers with a satisfying experience.
               </p>
             </div>
 

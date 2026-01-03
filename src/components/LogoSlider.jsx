@@ -5,26 +5,26 @@ const LogoSlider = () => {
   const infoItems = [
     { 
       name: 'Help Desk', 
-      link: '#helpdesk',
+      link: '/contact',
       type: 'link'
     },
     { 
       name: 'Why Us', 
-      link: '#whyus',
+      link: '/about',
       type: 'link'
     },
     { 
-      name: '(+91) 8750012222', 
-      link: 'tel:+918750012222',
+      name: '(+91)95600 82761', 
+      link: 'tel:+91 95600 82761',
       type: 'phone'
     },
     { 
-      name: 'info@navustech.com', 
-      link: 'mailto:info@navustech.com',
+      name: 'finegrowamazon@gmail.com ', 
+      link: 'mailto:finegrowamazon@gmail.com ',
       type: 'email'
     },
     { 
-      name: 'Mon - Sat: 9:00 - 17:30', 
+      name: 'Mon - Sat: 10:00 AM – 7:00 PM', 
       type: 'text'
     }
   ];

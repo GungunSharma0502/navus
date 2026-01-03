@@ -84,7 +84,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
-  font-family: inherit;
+  /* font-family: inherit; */
 }
 
 .contact-btn-primary {

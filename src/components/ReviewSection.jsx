@@ -3,18 +3,19 @@ import './css/ReviewSection.css';
 
 const ReviewSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const reviews = [
     {
       id: 1,
       title: "AllesOben - Looking forward to more expectations Finegrow Team",
-      description: "I am delighted to share my feedback regarding the exceptional results we have witnessed after using your services. Your company truly stands out as the best choice for account management services. The level of excellence you have consistently delivered has made a significant impact on our operations, and we couldn't be more satisfied with the outcomes. Thank you for your dedication and expertise in helping us achieve our goals.",
+      description: "I am delighted to share my feedback regarding the exceptional results we have witnessed after using your services. Your company truly stands out as the best choice for account management services.",
       image: "https://images.unsplash.com/photo-1621274790572-7c32596bc67f?w=800&q=80"
     },
     {
       id: 2,
       title: "DIGITAL DESIGNING LAB - Communication was smooth and they explained everything clearly",
-      description: "I am very satisfied with the service provided by the SPN team. They were professional, knowledgeable, and completed all tasks on time. My listings and ads were optimized perfectly",
+      description: "I am very satisfied with the service provided by the SPN team. They were professional, knowledgeable, and completed all tasks on time.",
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80"
     },
     {
@@ -38,7 +39,7 @@ const ReviewSection = () => {
     {
       id: 6,
       title: "Courtney Schiefelbein, DMD - Great Service!",
-      description: "Very professional, efficient, and timely. The team is responsive and helped me clean up and optimize my amazon items quickly and cost-efficiently. We are now working on optimizing ad-campaigns, and I'm similarly impressed. I highly recommend them.",
+      description: "Very professional, efficient, and timely. The team is responsive and helped me clean up and optimize my amazon items quickly and cost-efficiently.",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
     },
     {
@@ -50,10 +51,21 @@ const ReviewSection = () => {
     {
       id: 8,
       title: "RISHAB BANSAL - Finegrow has done an excellent job managing our Amazon ads",
-      description: "Finegrow has done an excellent job managing our Amazon ads. His deep understanding of ad strategies, consistent optimization, and focus on results have brought great improvements in our performance. He is professional, responsive, and truly dedicated to helping the brand grow. Highly recommended for anyone looking for expert Amazon advertising support!",
+      description: "Finegrow has done an excellent job managing our Amazon ads. His deep understanding of ad strategies, consistent optimization, and focus on results have brought great improvements in our performance.",
       image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80"
     }
   ];
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -66,6 +78,10 @@ const ReviewSection = () => {
   const getCardClass = (index) => {
     const position = (index - currentIndex + reviews.length) % reviews.length;
     return `review-card review-card-${position + 1}`;
+  };
+
+  const handleDotClick = (index) => {
+    setCurrentIndex(index);
   };
 
   return (
@@ -81,6 +97,7 @@ const ReviewSection = () => {
             <div
               key={review.id}
               className={getCardClass(index)}
+              style={{ display: isMobile && index !== currentIndex ? 'none' : 'block' }}
             >
               <div className="review-card-image-container">
                 <img src={review.image} alt={review.title} className="review-card-image" />
@@ -94,8 +111,24 @@ const ReviewSection = () => {
           ))}
         </div>
       </div>
+
+      {isMobile && (
+        <div className="review-dots">
+          {reviews.map((_, index) => (
+            <button
+              key={index}
+              className={`review-dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => handleDotClick(index)}
+              aria-label={`Go to review ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
 export default ReviewSection;
+
+
+

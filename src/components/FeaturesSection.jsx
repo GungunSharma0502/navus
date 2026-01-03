@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const FeaturesSection = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
   
   const planningSteps = [
     { icon: "🎯", title: "Set Goals", color: "#FF6B6B" },
@@ -11,32 +12,80 @@ const FeaturesSection = () => {
   ];
 
   useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % planningSteps.length);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
 
+  const isMobile = windowWidth <= 768;
+  const isTablet = windowWidth > 768 && windowWidth <= 1024;
+  const isSmallMobile = windowWidth <= 480;
+
   return (
     <div style={styles.showcase}>
-      <div style={styles.container}>
+      <div style={{
+        ...styles.container,
+        gridTemplateColumns: isMobile || isTablet ? '1fr' : '1fr 1fr',
+        gap: isMobile ? '40px' : isTablet ? '50px' : '80px',
+        padding: isMobile ? '0 15px' : '0 20px'
+      }}>
         {/* Left Content */}
-        <div style={styles.content}>
-          <div style={styles.intro}>
-            <h2 style={styles.introText}>
+        <div style={{
+          ...styles.content,
+          paddingRight: isMobile || isTablet ? '0' : '40px',
+          textAlign: isMobile ? 'center' : 'left'
+        }}>
+          <div style={{
+            ...styles.intro,
+            marginBottom: isMobile ? '30px' : '60px'
+          }}>
+            <h2 style={{
+              ...styles.introText,
+              fontSize: isSmallMobile ? '1.8rem' : isMobile ? '2.2rem' : isTablet ? '2.5rem' : '3rem',
+              lineHeight: isMobile ? '1.2' : '1.3'
+            }}>
               PLANNING <span style={styles.highlight}>YOUR MARKETING</span>{' '}
               <span style={styles.highlight}>CAMPAIGN</span>.
             </h2>
           </div>
 
-          <div style={styles.details}>
-            <h3 style={styles.company}>Create a successful marketing campaign</h3>
+          <div style={{
+            ...styles.details,
+            marginBottom: isMobile ? '30px' : '50px'
+          }}>
+            <h3 style={{
+              ...styles.company,
+              fontSize: isSmallMobile ? '1.5rem' : isMobile ? '1.8rem' : isTablet ? '2rem' : '2.5rem',
+              marginBottom: isMobile ? '10px' : '15px'
+            }}>
+              Create a successful marketing campaign
+            </h3>
             
-            <p style={styles.description}>
+            <p style={{
+              ...styles.description,
+              fontSize: isSmallMobile ? '0.95rem' : isMobile ? '1rem' : '1.1rem',
+              marginBottom: isMobile ? '25px' : '30px'
+            }}>
               An effective campaign demands a great deal of time, and planning. If you've never run a marketing campaign before, it can be tough to understand.
             </p>
             
-            <button style={styles.contactButton}>
+            <button style={{
+              ...styles.contactButton,
+              padding: isSmallMobile ? '14px 30px' : isMobile ? '16px 35px' : '18px 40px',
+              fontSize: isSmallMobile ? '0.95rem' : isMobile ? '1rem' : '1.1rem',
+              width: isMobile ? '100%' : 'auto',
+              justifyContent: isMobile ? 'center' : 'flex-start'
+            }}>
               <span style={styles.buttonText}>Contact us</span>
               <span style={styles.buttonArrow}>→</span>
             </button>
@@ -45,30 +94,64 @@ const FeaturesSection = () => {
 
         {/* Right Content - Planning Animation */}
         <div style={styles.device}>
-          <div style={styles.deviceFrame}>
-            <div style={styles.deviceScreen}>
+          <div style={{
+            ...styles.deviceFrame,
+            maxWidth: isMobile ? '100%' : isTablet ? '500px' : '600px',
+            padding: isSmallMobile ? '12px' : isMobile ? '15px' : '20px',
+            borderRadius: isSmallMobile ? '25px' : isMobile ? '30px' : '40px'
+          }}>
+            <div style={{
+              ...styles.deviceScreen,
+              padding: isSmallMobile ? '15px' : isMobile ? '20px' : isTablet ? '25px' : '30px',
+              minHeight: isSmallMobile ? '320px' : isMobile ? '360px' : isTablet ? '400px' : '450px',
+              borderRadius: isSmallMobile ? '15px' : isMobile ? '18px' : '25px'
+            }}>
               {/* Planning Process Animation */}
               <div style={styles.planningContainer}>
-                <div style={styles.planningTitle}>Campaign Planning Process</div>
+                <div style={{
+                  ...styles.planningTitle,
+                  fontSize: isSmallMobile ? '1.1rem' : isMobile ? '1.3rem' : isTablet ? '1.5rem' : '1.6rem',
+                  marginBottom: isMobile ? '10px' : '15px'
+                }}>
+                  Campaign Planning Process
+                </div>
                 
-                <div style={styles.stepsContainer}>
+                <div style={{
+                  ...styles.stepsContainer,
+                  gridTemplateColumns: isSmallMobile ? '1fr' : '1fr 1fr',
+                  gap: isSmallMobile ? '10px' : isMobile ? '12px' : '15px',
+                  marginBottom: isMobile ? '15px' : '20px'
+                }}>
                   {planningSteps.map((step, index) => (
                     <div 
                       key={index}
                       style={{
                         ...styles.stepCard,
-                        transform: activeStep === index ? 'scale(1.1)' : 'scale(1)',
+                        transform: activeStep === index ? 'scale(1.05)' : 'scale(1)',
                         opacity: activeStep === index ? 1 : 0.5,
-                        borderColor: activeStep === index ? step.color : '#e0e0e0'
+                        borderColor: activeStep === index ? step.color : '#e0e0e0',
+                        padding: isSmallMobile ? '12px' : isMobile ? '15px' : '18px'
                       }}
                     >
-                      <div style={{...styles.stepIcon, backgroundColor: step.color}}>
+                      <div style={{
+                        ...styles.stepIcon,
+                        backgroundColor: step.color,
+                        width: isSmallMobile ? '45px' : isMobile ? '50px' : '60px',
+                        height: isSmallMobile ? '45px' : isMobile ? '50px' : '60px',
+                        fontSize: isSmallMobile ? '1.3rem' : isMobile ? '1.5rem' : '1.7rem'
+                      }}>
                         {step.icon}
                       </div>
-                      <div style={styles.stepTitle}>{step.title}</div>
+                      <div style={{
+                        ...styles.stepTitle,
+                        fontSize: isSmallMobile ? '0.9rem' : isMobile ? '1rem' : '1.1rem'
+                      }}>
+                        {step.title}
+                      </div>
                       <div style={{
                         ...styles.stepNumber,
-                        color: step.color
+                        color: step.color,
+                        fontSize: isSmallMobile ? '0.75rem' : '0.85rem'
                       }}>
                         Step {index + 1}
                       </div>
@@ -77,7 +160,10 @@ const FeaturesSection = () => {
                 </div>
 
                 {/* Progress Indicator */}
-                <div style={styles.progressBar}>
+                <div style={{
+                  ...styles.progressBar,
+                  height: isSmallMobile ? '6px' : '8px'
+                }}>
                   <div style={{
                     ...styles.progressFill,
                     width: `${((activeStep + 1) / planningSteps.length) * 100}%`
@@ -85,13 +171,30 @@ const FeaturesSection = () => {
                 </div>
 
                 {/* Central Circle Animation */}
-                <div style={styles.centerCircle}>
+                <div style={{
+                  ...styles.centerCircle,
+                  bottom: isSmallMobile ? '15px' : isMobile ? '20px' : '25px'
+                }}>
                   <div style={{
                     ...styles.pulseRing,
-                    animation: 'pulse 2s infinite'
+                    animation: 'pulse 2s infinite',
+                    width: isSmallMobile ? '60px' : '80px',
+                    height: isSmallMobile ? '60px' : '80px'
                   }} />
-                  <div style={styles.centerIcon}>📋</div>
-                  <div style={styles.centerText}>Planning</div>
+                  <div style={{
+                    ...styles.centerIcon,
+                    width: isSmallMobile ? '45px' : '60px',
+                    height: isSmallMobile ? '45px' : '60px',
+                    fontSize: isSmallMobile ? '1.4rem' : '1.8rem'
+                  }}>
+                    📋
+                  </div>
+                  <div style={{
+                    ...styles.centerText,
+                    fontSize: isSmallMobile ? '0.75rem' : '0.9rem'
+                  }}>
+                    Planning
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,13 +226,6 @@ const FeaturesSection = () => {
             transform: translateY(-10px);
           }
         }
-
-        @media (max-width: 1024px) {
-          .features-container {
-            grid-template-columns: 1fr !important;
-            gap: 60px !important;
-          }
-        }
       `}</style>
     </div>
   );
@@ -148,20 +244,17 @@ const styles = {
     maxWidth: '1400px',
     margin: '0 auto',
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: '80px',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: '100%'
   },
   content: {
-    paddingRight: '40px'
+    width: '100%'
   },
   intro: {
-    marginBottom: '60px'
+    width: '100%'
   },
   introText: {
-    fontSize: '3rem',
     fontWeight: '300',
-    lineHeight: '1.3',
     margin: '0',
     color: '#b0b0b0'
   },
@@ -170,26 +263,22 @@ const styles = {
     color: '#ffffff'
   },
   details: {
-    marginBottom: '50px'
+    width: '100%'
   },
   company: {
-    fontSize: '2.5rem',
     fontWeight: '700',
-    margin: '0 0 15px 0',
+    margin: '0',
     color: '#ffffff'
   },
   description: {
-    fontSize: '1.1rem',
     lineHeight: '1.7',
     color: '#999999',
-    margin: '0 0 30px 0'
+    margin: '0'
   },
   contactButton: {
     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     border: 'none',
-    padding: '18px 40px',
     borderRadius: '50px',
-    fontSize: '1.1rem',
     fontWeight: '600',
     color: '#ffffff',
     cursor: 'pointer',
@@ -214,23 +303,18 @@ const styles = {
   device: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: '100%'
   },
   deviceFrame: {
     position: 'relative',
     width: '100%',
-    maxWidth: '600px',
     background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
-    borderRadius: '40px',
-    padding: '20px',
     boxShadow: '0 30px 80px rgba(0, 0, 0, 0.9)',
     border: '3px solid rgba(255, 255, 255, 0.1)'
   },
   deviceScreen: {
     background: 'linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%)',
-    borderRadius: '25px',
-    padding: '40px',
-    minHeight: '550px',
     position: 'relative',
     overflow: 'hidden'
   },
@@ -238,26 +322,21 @@ const styles = {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    gap: '30px',
+    gap: '15px',
     position: 'relative'
   },
   planningTitle: {
-    fontSize: '1.8rem',
     fontWeight: '700',
     color: '#2d3748',
-    textAlign: 'center',
-    marginBottom: '20px'
+    textAlign: 'center'
   },
   stepsContainer: {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: '20px',
-    marginBottom: '30px'
+    width: '100%'
   },
   stepCard: {
     background: '#ffffff',
     borderRadius: '20px',
-    padding: '25px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -268,31 +347,25 @@ const styles = {
     cursor: 'pointer'
   },
   stepIcon: {
-    width: '70px',
-    height: '70px',
     borderRadius: '50%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '2rem',
     transition: 'all 0.3s ease',
     animation: 'float 3s ease-in-out infinite'
   },
   stepTitle: {
-    fontSize: '1.1rem',
     fontWeight: '600',
     color: '#2d3748',
     textAlign: 'center'
   },
   stepNumber: {
-    fontSize: '0.85rem',
     fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: '1px'
   },
   progressBar: {
     width: '100%',
-    height: '8px',
     background: '#e0e0e0',
     borderRadius: '10px',
     overflow: 'hidden',
@@ -306,7 +379,6 @@ const styles = {
   },
   centerCircle: {
     position: 'absolute',
-    bottom: '40px',
     left: '50%',
     transform: 'translateX(-50%)',
     display: 'flex',
@@ -316,8 +388,6 @@ const styles = {
   },
   pulseRing: {
     position: 'absolute',
-    width: '80px',
-    height: '80px',
     borderRadius: '50%',
     background: 'rgba(102, 126, 234, 0.3)',
     top: '-10px',
@@ -325,19 +395,15 @@ const styles = {
     transform: 'translateX(-50%)'
   },
   centerIcon: {
-    width: '60px',
-    height: '60px',
     borderRadius: '50%',
     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '1.8rem',
     boxShadow: '0 8px 20px rgba(102, 126, 234, 0.4)',
     zIndex: 1
   },
   centerText: {
-    fontSize: '0.9rem',
     fontWeight: '700',
     color: '#667eea',
     textTransform: 'uppercase',

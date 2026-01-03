@@ -1,5 +1,6 @@
 import React from 'react';
 import './Flipkart.css';
+import { Link } from 'react-router-dom';
 
 const FlipkartServices = () => {
   return (
@@ -132,7 +133,9 @@ const FlipkartServices = () => {
         <div className="flipkart-wave-bg"></div>
         <div className="flipkart-cta-content">
           <h2 className="flipkart-cta-title">Grow faster with marketplace-approved strategies and expert support.</h2>
-          <button className="flipkart-cta-button">Get Started Today</button>
+          <button className="flipkart-cta-button">
+             <Link to="/contact" className="flipkart-cta-buttonn">Get Started Today</Link>
+          </button>
         </div>
       </section>
     </div>
